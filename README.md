@@ -1,26 +1,17 @@
-# Twitter Scrape
-
-Scrape tweets from twitter into a DB.  Convert the DB to a CSV file.
-
-## Installation
-
+# Twitter Scraper
+The code can be used to scrape tweets from twitter into a Database which can be  then dumped into a CSV.  
+Step1: Install the required packages mentioned in requirements.txt using the below command
 * `pip install -r requirements.txt`
-
-## Setup
-
-* Create a file called `private.py`.
-* Sign up for a Twitter [developer account](https://dev.twitter.com/).
-* Create an application [here](https://apps.twitter.com/).
-* Set the following keys in `private.py`.  You can get these values from the app you created:
-    * `TWITTER_KEY`
+Step2: 
+* Create a file `private.py` in the directory.
+* From Twitter developer account extract the following keys and edit them in private.py
+    * `TWITTER_KEY`(access token)
     * `TWITTER_SECRET`
     * `TWITTER_APP_KEY`
     * `TWITTER_APP_SECRET`
-* Set the following key in `private.py`.
-    * `CONNECTION_STRING` -- use `sqlite:///tweets.db` as a default if you need to.  It's recommended to use postgresql, but not necessary.
-
-## Usage
+    * `CONNECTION_STRING` = "sqlite:///tweets.db" 
+Command line queries:
 
 * `python scrape.py` to scrape.  Use `Ctrl + C` to stop.
 * `python dump.py` to generate `tweets.csv`, which contains all the tweet data that was scraped.
-* If you want to edit behavior, change settings in `settings.py`.
+* To modify keywords and date change the values in `settings.py`.
